@@ -79,7 +79,7 @@ updated.append(str(soup.find_all("div", {"class": "xg1aie"}))[21:32])
 df['updated'] = updated
 
 # save final results as excel file
-file = 'GooglePlayStore_bankingapps.xlsx'
+file = 'Output/GooglePlayStore_bankingapps.xlsx'
 df.to_excel(file, index=False)
 
 ## automatic mailing regarding latest version and its patch notes
@@ -127,4 +127,4 @@ send_mail(send_from=username,
           text="Hi subscriber, please find attached an excel file with an overview of the latest versions and updates "
                "of the Belgian banking apps.",
           send_to=["khalid.amine@sia-partners.com", "ruben.borghs@sia-partners.com"],
-          files=['/Users/khalid/Desktop/BKG87/Monitoring_BankingApps/GooglePlayStore_bankingapps.xlsx'])
+          files=['/Users/khalid/Desktop/BKG87/Monitoring_BankingApps/Output/GooglePlayStore_bankingapps.xlsx'])
