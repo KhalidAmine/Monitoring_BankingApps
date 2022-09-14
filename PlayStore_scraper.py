@@ -38,7 +38,7 @@ df.to_excel(file, index=False)
 def send_mail(send_from: str, subject: str, text: str,
               send_to: list, files=None):
     """This function generalizes the automatic mailing process"""
-    send_to = default_address if not send_to else send_to
+    send_to = send_to
 
     msg = MIMEMultipart()
     msg['From'] = send_from
