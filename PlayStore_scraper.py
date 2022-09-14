@@ -61,17 +61,14 @@ def send_mail(send_from: str, subject: str, text: str,
     smtp.sendmail(send_from, send_to, msg.as_string())
     smtp.close()
 
-# put in login details from gmail app password + recipients and send out the update
-Mail_details = pd.read_excel('Input/Mail_login.xlsx')
+# import all mail details en send out
+Mail_details = pd.read_excel('Input/Mail.xlsx')
 username = Mail_details.iloc[0][0]
 password = Mail_details.iloc[0][1]
 send_to = Mail_details['Send to'].tolist()
+subject = Mail_details.iloc[0][3]
+text = Mail_details.iloc[0][4]
 
-# mail subject and body
-subject = "test mail: Latest banking app updates (automated mail)"
-text = "Hi subscriber, please find attached an excel file with an overview of the latest versions and updates of the Belgian banking apps."
-
-# send out mails
 send_mail(send_from= username,
           subject=subject,
           text= text,
