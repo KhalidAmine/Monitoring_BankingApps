@@ -9,8 +9,12 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.application import MIMEApplication
 from os.path import basename
 
+#checking wd
+import os
+print(os.getcwd())
+
 # import ID's of Google play store banking apps we want to monitor
-IDs = pd.read_excel('Input/BankingApps.xlsx')
+IDs = pd.read_excel('input/BankingApps.xlsx')
 
 # download Google play store data and store as pandas dataframe
 df = pd.DataFrame(IDs.apply(lambda x: app(x['Google play ID'], lang='en', country='be'), axis=1).tolist())[['title',
