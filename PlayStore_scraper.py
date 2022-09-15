@@ -35,7 +35,7 @@ df['updated'] = IDs.apply(lambda x: updated_date_scraper(x['Google play ID']), a
 # todo see link Dorian https://www.freecodecamp.org/news/if-name-main-python-example/#:~:text=We%20can%20use%20an%20if,name%20if%20it%20is%20imported
 
 # save final results as excel file
-file = '/Users/khalid/Desktop/BKG87/Monitoring_BankingApps/Output/GooglePlayStore_bankingapps.xlsx'
+file = 'Output/GooglePlayStore_bankingapps.xlsx'
 df.to_excel(file, index=False)
 
 # automated mailing regarding latest version and its patch notes
